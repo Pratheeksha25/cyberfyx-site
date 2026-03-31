@@ -1,0 +1,96 @@
+---
+import { fetchContactProfile } from '../lib/api';
+import { CONTACT_PROFILE_FALLBACK } from '../lib/fallbacks';
+
+const profile = (await fetchContactProfile()) ?? CONTACT_PROFILE_FALLBACK;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="text-decoration: none; color: inherit; font-weight: bold; font-size: 1.8rem;">
+          <span style="font-family: var(--font-primary);">CYBER<span style="color: var(--accent-primary);">FYX</span></span>
+        </a>
+        <p>Globally trusted leader in cybersecurity and smart IT management.</p>
+        {profile.office_regions.length > 0 && (
+          <div class="office-regions">
+            {profile.office_regions.map(r => (
+              <span class="region-badge">{r.label}</span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/services">Our Services</a></li>
+          <li><a href="/industries">Industries</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services/cybersecurity">Cybersecurity</a></li>
+          <li><a href="/services/it-security">IT Security</a></li>
+          <li><a href="/services/endpoint-management">Endpoint Management</a></li>
+          <li><a href="/services">View All</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Us</h4>
+        <ul class="footer-links footer-contact">
+          <li>
+            <i class="fa-solid fa-location-dot"
+               onclick={`window.open('${profile.map_url}', '_blank')`}
+               style="margin-top: 5px; color: var(--accent-primary); cursor: pointer;"></i>
+            <span set:html={profile.headquarters_address.replace(', ', ',<br>')}></span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope" style="margin-top: 5px; color: var(--accent-primary);"></i>
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${profile.sales_email}`} target="_blank">
+              {profile.sales_email}
+            </a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone" style="margin-top: 5px; color: var(--accent-primary);"></i>
+            <a href={`tel:${profile.primary_phone.replace(/\s/g, '')}`}>{profile.primary_phone}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy;{new Date().getFullYear()} Cyberfyx. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" id="back-to-top" class="back-to-top" aria-label="Back to Top">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+<style>
+  .office-regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  .region-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border-radius: 999px;
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    background: var(--bg-glass);
+  }
+</style>

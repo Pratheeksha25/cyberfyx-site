@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import FooterCta from '../../components/FooterCta.astro';
+import GlassCard from '../../components/GlassCard.astro';
+---
+
+<BaseLayout 
+  title="Solutions | Cyberfyx"
+  description="Comprehensive, end-to-end outcome-driven solutions that protect your infrastructure and optimize business operations."
+>
+  <PageHero 
+    eyebrow="Our Solutions"
+    headline="Services & Offerings"
+    lede="We deliver comprehensive, end-to-end outcome-driven solutions that protect your infrastructure and optimize business operations."
+  >
+    <div slot="aside" class="flex-col gap-1">
+      <h3 style="font-size: 1.25rem;">End-to-end Coverage</h3>
+      <p style="font-size: 0.95rem;">Protecting infrastructure, data, and users across on-prem, cloud, and hybrid environments.</p>
+    </div>
+  </PageHero>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <GlassCard className="fade-up">
+          <span class="mono">Cybersecurity</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Risk reduction, testing, privacy, and strategic leadership.</h3>
+          <p>For teams that need practical security programs, assurance, and decision support.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/cybersecurity">View cybersecurity</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up delay-100">
+          <span class="mono">IT security</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Framework implementation, internal audits, continuity, and cloud governance.</h3>
+          <p>For organizations that need standards translated into working controls and audit-ready evidence.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/it-security">View IT security</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up delay-200">
+          <span class="mono">Endpoint operations</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Visibility, automation, monitoring, and lifecycle control.</h3>
+          <p>For IT teams balancing device growth, compliance, operational resilience, and automation expectations.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/endpoint-management">View endpoint operations</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up">
+          <span class="mono">Core industry services</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Management systems, sector audits, and industrial assurance.</h3>
+          <p>For operations, quality, and supplier teams dealing with regulated industrial environments.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/core-industry">View core industry</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up delay-100">
+          <span class="mono">Training</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Capability building for security, privacy, governance, and recovery teams.</h3>
+          <p>For organizations that need internal awareness and audit readiness to sustain change after rollout.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/training">View training</a>
+        </GlassCard>
+      </div>
+    </div>
+  </section>
+
+  <FooterCta />
+</BaseLayout>

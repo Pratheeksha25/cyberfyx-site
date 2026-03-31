@@ -1,0 +1,259 @@
+---
+---
+<div class="contact-form-card fade-up delay-100">
+  <div class="contact-form-header">
+    <span class="eyebrow">Start the conversation</span>
+    <h3>Tell us about your needs</h3>
+    <p>We'll get back to you within one business day.</p>
+  </div>
+
+  <form id="contact-form" action="#" method="POST" class="contact-form" novalidate>
+
+    <div class="cf-row">
+      <div class="cf-field">
+        <input type="text" id="name" name="name" class="cf-input" placeholder=" " required autocomplete="name">
+        <label for="name" class="cf-label">Full Name</label>
+        <span class="cf-bar"></span>
+      </div>
+
+      <div class="cf-field">
+        <input type="email" id="email" name="email" class="cf-input" placeholder=" " required autocomplete="email">
+        <label for="email" class="cf-label">Email Address</label>
+        <span class="cf-bar"></span>
+      </div>
+    </div>
+
+    <div class="cf-field cf-select-field">
+      <select id="subject" name="subject" class="cf-input cf-select" required>
+        <option value="" disabled selected></option>
+        <option value="cybersecurity-services">Cybersecurity</option>
+        <option value="it-security-and-continuity">IT Security</option>
+        <option value="endpoint-management-services">Endpoint Management</option>
+        <option value="core-industry-services">Core Industry Services</option>
+        <option value="training">Training</option>
+        <option value="general-inquiry">General Inquiry</option>
+      </select>
+      <label for="subject" class="cf-label">Service Interested In</label>
+      <span class="cf-bar"></span>
+      <i class="fa-solid fa-chevron-down cf-select-icon"></i>
+    </div>
+
+    <div class="cf-field">
+      <textarea id="message" name="message" class="cf-input cf-textarea" placeholder=" " required rows="4"></textarea>
+      <label for="message" class="cf-label">Your Message</label>
+      <span class="cf-bar"></span>
+    </div>
+
+    <div id="form-status" class="cf-status" style="display:none;"></div>
+
+    <button type="submit" id="submit-btn" class="cf-submit">
+      <span class="cf-submit-text">Send Message</span>
+      <i class="fa-solid fa-arrow-right cf-submit-icon"></i>
+    </button>
+
+  </form>
+</div>
+
+<style>
+  .contact-form-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(53, 29, 117, 0.06);
+  }
+
+  .contact-form-header {
+    margin-bottom: 2rem;
+  }
+
+  .contact-form-header h3 {
+    font-size: 1.5rem;
+    color: var(--logo-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-form-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .cf-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .cf-row { grid-template-columns: 1fr; }
+    .contact-form-card { padding: 1.75rem 1.25rem; }
+  }
+
+  /* Floating label field */
+  .cf-field {
+    position: relative;
+  }
+
+  .cf-input {
+    width: 100%;
+    padding: 1.1rem 0.25rem 0.45rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--border-glass);
+    border-radius: 0;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 0.97rem;
+    outline: none;
+    transition: border-color 0.25s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .cf-input:focus {
+    border-color: var(--logo-text-primary);
+  }
+
+  /* Floating label */
+  .cf-label {
+    position: absolute;
+    top: 1.05rem;
+    left: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transform-origin: left top;
+    transition: transform 0.2s ease, color 0.2s ease, font-size 0.2s ease;
+  }
+
+  /* Raise label when input has content or is focused */
+  .cf-input:focus ~ .cf-label,
+  .cf-input:not(:placeholder-shown) ~ .cf-label {
+    transform: translateY(-1.1rem) scale(0.8);
+    color: var(--logo-text-accent);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  /* Animated underline bar */
+  .cf-bar {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--logo-text-primary);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .cf-input:focus ~ .cf-label ~ .cf-bar,
+  .cf-input:focus ~ .cf-bar {
+    width: 100%;
+  }
+
+  /* Textarea */
+  .cf-textarea {
+    resize: none;
+    min-height: 96px;
+    padding-top: 1.25rem;
+    line-height: 1.6;
+  }
+
+  /* Select field */
+  .cf-select-field {
+    position: relative;
+  }
+
+  .cf-select {
+    cursor: pointer;
+    padding-right: 2rem;
+    color: var(--text-primary);
+  }
+
+  .cf-select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  .cf-select-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 1.05rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: transform 0.2s ease;
+  }
+
+  .cf-select:focus ~ .cf-label ~ .cf-bar ~ .cf-select-icon,
+  .cf-select:focus ~ .cf-select-icon {
+    transform: rotate(180deg);
+    color: var(--logo-text-primary);
+  }
+
+  /* Status message */
+  .cf-status {
+    padding: 0.85rem 1.1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Submit button */
+  .cf-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.95rem 1.5rem;
+    background: var(--logo-text-primary);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-main);
+    font-size: 0.97rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 24px rgba(53, 29, 117, 0.22);
+  }
+
+  .cf-submit:hover {
+    background: var(--logo-text-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(231, 135, 49, 0.28);
+  }
+
+  .cf-submit:hover .cf-submit-icon {
+    transform: translateX(4px);
+  }
+
+  .cf-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .cf-submit-icon {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+  }
+
+  [data-theme="dark"] .contact-form-card {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+</style>
+

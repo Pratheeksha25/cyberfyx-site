@@ -1,0 +1,35 @@
+# Cyberfyx Website
+
+Building the next-generation website for Cyberfyx with a high-performance **Astro 4.x** frontend and a robust **FastAPI** backend.
+
+## Overview
+
+The Cyberfyx website project is a secure, decoupled web application. It delivers a blazing-fast, SEO-optimized user experience while maintaining a professional and administrative-ready backend.
+
+- **🚀 Frontend**: Built with [Astro](https://astro.build/) for high-end Core Web Vitals and SEO.
+- **⚙️ Backend**: Built with [FastAPI](https://fastapi.tiangolo.com/) for reliable data handling and lead routing.
+
+## Navigation
+
+- **[Architecture](docs/architecture.md)**: Explore the high-level system design.
+- **[Backend Guide](docs/backend.md)**: Deep dive into the API, database, and background workers.
+- **[Frontend Guide](docs/frontend.md)**: Details on the design system, animations, and Astro configuration.
+- **[Getting Started](docs/getting-started.md)**: Step-by-step instructions for local development.
+
+## Project Structure
+
+```text
+/                   # Root project folder
+├── backend/        # FastAPI application (FastAPI, SQLAlchemy, Alembic)
+├── frontend-astro/  # Astro static site generator (Astro, Vanilla TS, CSS)
+├── docs/           # Comprehensive documentation suite
+└── README.md       # Project entry point
+```
+
+## Quick Start
+
+To get up and running quickly:
+1.  **Backend**: `cd backend && pip install -e .[dev] && uvicorn app.main:app --reload`
+2.  **Frontend**: `cd frontend-astro && npm install && npm run dev`
+
+Refer to the **[Getting Started](docs/getting-started.md)** guide for detailed setup and configuration.

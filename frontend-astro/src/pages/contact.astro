@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+---
+
+<BaseLayout 
+  title="Contact Cyberfyx | Start a Security Conversation"
+  description="Whether you need an immediate cybersecurity assessment, managed endpoint services, or ISO consultation, our team is ready to assist you."
+>
+  <section id="contact" class="section pt-4">
+    <div class="container">
+      <div class="grid grid-2 gap-3" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="fade-up">
+            <h1 class="mb-2">Get in <span class="text-gradient">Touch</span></h1>
+            <p class="lede mb-3">Whether you need an immediate cybersecurity assessment, managed endpoint services, or ISO consultation, our team is ready to assist you.</p>
+
+            <div class="flex gap-1 mb-2">
+                <div class="service-icon" style="flex-shrink: 0; width: 50px; height: 50px;">📍</div>
+                <div>
+                    <h4 class="mb-1">Office Location</h4>
+                    <p>Janardhana Towers, Ashok Nagar<br>Bengaluru 560025</p>
+                </div>
+            </div>
+
+            <div class="flex gap-1 mb-2">
+                <div class="service-icon" style="flex-shrink: 0; width: 50px; height: 50px;">📞</div>
+                <div>
+                    <h4 class="mb-1">Phone Number</h4>
+                    <p><a href="tel:+919663410308">+91 9663410308</a></p>
+                </div>
+            </div>
+
+            <div class="flex gap-1 mb-2">
+                <div class="service-icon" style="flex-shrink: 0; width: 50px; height: 50px;">✉️</div>
+                <div>
+                    <h4 class="mb-1">Email Address</h4>
+                    <p><a href="mailto:sales@cyberfyx.net">sales@cyberfyx.net</a></p>
+                </div>
+            </div>
+        </div>
+
+        <ContactForm />
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import '../scripts/animations.ts';
+  import '../scripts/contact-form.ts';
+</script>

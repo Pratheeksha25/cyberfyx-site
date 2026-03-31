@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import FooterCta from '../components/FooterCta.astro';
+import GlassCard from '../components/GlassCard.astro';
+---
+
+<BaseLayout 
+  title="Industries | Cyberfyx Sector Coverage"
+  description="Tailored cybersecurity and IT governance frameworks built for specific sector requirements."
+>
+  <PageHero 
+    eyebrow="Sector Coverage"
+    headline="Industries We Protect"
+    lede="Tailored cybersecurity and IT governance frameworks built for specific sector requirements."
+  >
+    <div slot="aside" class="flex-col gap-1" style="list-style: none;">
+      <h3 style="font-size: 1.25rem;">Key Sectors</h3>
+      <ul style="padding: 0;" class="flex-col gap-1">
+        <li>Healthcare & BFSI</li>
+        <li>Industrial & Manufacturing</li>
+        <li>Public & Essential Services</li>
+        <li>Enterprise Estates</li>
+      </ul>
+    </div>
+  </PageHero>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <GlassCard className="fade-up border-l-4" style="border-left: 4px solid var(--accent-primary);">
+          <span class="mono">Regulated digital businesses</span>
+          <h4 class="mt-1 mb-1">Healthcare, BFSI, SaaS, and privacy-sensitive platforms.</h4>
+          <p>Programs built for regulated data handling, customer assurance, audit obligations, and changing privacy expectations.</p>
+        </GlassCard>
+        <GlassCard className="fade-up delay-100 border-l-4" style="border-left: 4px solid var(--accent-primary);">
+          <span class="mono">Industrial operations</span>
+          <h4 class="mt-1 mb-1">Manufacturing, aerospace, automotive, energy, and OT-heavy operations.</h4>
+          <p>Support for safety, continuity, supplier audits, and industrial transformation programs.</p>
+        </GlassCard>
+        <GlassCard className="fade-up delay-200 border-l-4" style="border-left: 4px solid var(--accent-primary);">
+          <span class="mono">Public and essential services</span>
+          <h4 class="mt-1 mb-1">Government, telecom, logistics, and education.</h4>
+          <p>Structured governance, continuity planning, and control visibility for environments where stakeholder trust matters daily.</p>
+        </GlassCard>
+        <GlassCard className="fade-up delay-300 border-l-4" style="border-left: 4px solid var(--accent-primary);">
+          <span class="mono">Enterprise estates</span>
+          <h4 class="mt-1 mb-1">Cloud, on-prem, and hybrid teams scaling operations.</h4>
+          <p>Endpoint governance, service management alignment, and security programs that keep pace with platform change.</p>
+        </GlassCard>
+      </div>
+    </div>
+  </section>
+
+  <FooterCta />
+</BaseLayout>

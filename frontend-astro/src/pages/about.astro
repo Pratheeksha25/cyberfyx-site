@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import FooterCta from '../components/FooterCta.astro';
+---
+
+<BaseLayout 
+  title="About Cyberfyx | Advisory, Delivery, and Operational Depth"
+  description="We empower businesses to operate confidently with secure, compliant, and resilient digital environments."
+>
+  <PageHero 
+    eyebrow="Company Overview"
+    headline="About Cyberfyx"
+    lede="A globally trusted leader in cybersecurity and smart IT management."
+  >
+    <div slot="aside" class="flex-col gap-1">
+      <h3 style="font-size: 1.25rem;">Our Mission</h3>
+      <p style="font-size: 0.95rem;">Empowering organizations with intelligence-led protection, regulatory readiness, and operational resilience.</p>
+    </div>
+  </PageHero>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2 gap-3" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+         <div class="fade-up">
+           <h2>Vision</h2>
+           <p>We empower businesses to operate confidently with secure, compliant, and resilient digital environments—whether on-premises, in the cloud, or hybrid.</p>
+         </div>
+         <div class="fade-up delay-100">
+           <h2>Mission</h2>
+           <p>We help enterprises stay compliant, reduce risk, and optimize operations through expert consulting, automation, and managed services.</p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <FooterCta />
+</BaseLayout>

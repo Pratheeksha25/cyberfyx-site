@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import FooterCta from '../components/FooterCta.astro';
+import GlassCard from '../components/GlassCard.astro';
+---
+
+<BaseLayout 
+  title="Careers | Cyberfyx"
+  description="Join our team of cybersecurity experts, consultants, and IT management professionals."
+>
+  <PageHero 
+    eyebrow="Join Our Team"
+    headline="Careers at Cyberfyx"
+    lede="We are always looking for driven professionals to join our advisory, delivery, and operations teams."
+  >
+    <div slot="aside" class="flex-col gap-1">
+      <h3 style="font-size: 1.25rem;">Why Cyberfyx?</h3>
+      <p style="font-size: 0.95rem;">Work on mission-critical security challenges across diverse sectors with an expert team.</p>
+    </div>
+  </PageHero>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <GlassCard className="fade-up">
+          <span class="mono">Open Role</span>
+          <h4 class="mt-1 mb-1">Security Consultant</h4>
+          <p>Join our advisory practice helping clients navigate ISO, NIST, and compliance frameworks.</p>
+          <a class="btn btn-outline mt-1" href="mailto:careers@cyberfyx.com">Apply Now</a>
+        </GlassCard>
+        
+        <GlassCard className="fade-up delay-100">
+          <span class="mono">Open Role</span>
+          <h4 class="mt-1 mb-1">Endpoint Operations Engineer</h4>
+          <p>Manage enterprise UEM deployments, automation, and continuous monitoring.</p>
+          <a class="btn btn-outline mt-1" href="mailto:careers@cyberfyx.com">Apply Now</a>
+        </GlassCard>
+      </div>
+    </div>
+  </section>
+
+  <FooterCta />
+</BaseLayout>

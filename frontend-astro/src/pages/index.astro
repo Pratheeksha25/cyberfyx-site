@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import FooterCta from '../components/FooterCta.astro';
+import GlassCard from '../components/GlassCard.astro';
+---
+
+<BaseLayout title="Cyberfyx | Cybersecurity and Operational Resilience">
+  <!-- Hero Section (Test Structure + Webpro Copy) -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-content fade-up">
+          <span class="eyebrow" style="color: var(--logo-text-primary);">Cybersecurity | Compliance | Endpoint control</span>
+          <h1 style="color: var(--text-primary);">Security clarity for <span class="text-gradient">regulated operations.</span></h1>
+          <p class="lede">Cyberfyx helps regulated teams reduce audit risk, improve operational control, and keep security, compliance, and endpoint resilience aligned.</p>
+          <div class="hero-actions fade-up delay-100 mt-2">
+            <a href="/contact" class="btn btn-primary hero-btn hero-btn-primary">
+              <span>Book a consultation</span>
+            </a>
+            <a href="/services" class="btn hero-btn hero-btn-secondary">
+              <span>Explore solutions</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-up delay-200" aria-hidden="true">
+          <div class="hero-visual-shell">
+            <div class="hero-visual-glow hero-visual-glow-a"></div>
+            <div class="hero-visual-glow hero-visual-glow-b"></div>
+            <div class="hero-grid-frame">
+              <canvas id="hero-grid-canvas" class="hero-grid-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof Rail -->
+  <section class="section section-tight bg-secondary" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+         <GlassCard className="fade-up">
+            <span class="mono">Partnership posture</span>
+            <h4 class="mt-1 mb-1">Authorized implementation partner</h4>
+            <p style="font-size: 0.95rem;">Advisory, rollout, and ongoing support in one engagement model.</p>
+         </GlassCard>
+         <GlassCard className="fade-up delay-100">
+            <span class="mono">Framework range</span>
+            <h4 class="mt-1 mb-1">Security, privacy, continuity, and service management</h4>
+            <p style="font-size: 0.95rem;">Aligned to ISO, cloud controls, and sector requirements.</p>
+         </GlassCard>
+         <GlassCard className="fade-up delay-200">
+            <span class="mono">Operating contexts</span>
+            <h4 class="mt-1 mb-1">Cloud, on-prem, hybrid, and industrial estates</h4>
+            <p style="font-size: 0.95rem;">Built for distributed devices, regulated data, and uptime risk.</p>
+         </GlassCard>
+         <GlassCard className="fade-up delay-300">
+            <span class="mono">Advisory access</span>
+            <h4 class="mt-1 mb-1">Direct contact, map access, and regional office presence</h4>
+            <p style="font-size: 0.95rem;">Clear access to the team without heavy embeds or clutter.</p>
+         </GlassCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Outcomes (Stats/Solutions) -->
+  <section class="section section-band">
+    <div class="container">
+      <SectionHeader 
+        eyebrow="Core outcomes"
+        headline="Built to move buyers from uncertainty to control."
+        lede="A clearer trust model for regulated and mission-critical teams."
+      />
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="surface fade-up">
+          <h4 class="mb-1">Pass audits with less friction</h4>
+          <p>Translate framework requirements into evidence, controls, and working documentation teams can sustain.</p>
+        </div>
+        <div class="surface fade-up delay-100">
+          <h4 class="mb-1">Reduce endpoint and infrastructure risk</h4>
+          <p>Improve device visibility, patch discipline, access governance, and operational hygiene across distributed estates.</p>
+        </div>
+        <div class="surface fade-up delay-200">
+          <h4 class="mb-1">Strengthen incident readiness</h4>
+          <p>Stress test controls, identify blind spots, and build a response posture that stands up under pressure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Five Solution Tracks -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader 
+        eyebrow="Solution architecture"
+        headline="Five solution tracks, grouped by the jobs enterprise teams actually need done."
+        lede="Each offer is framed around delivery scope, outcomes, and fit."
+      />
+      
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <GlassCard className="fade-up">
+          <span class="mono">Cybersecurity</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Risk reduction, testing, privacy, and strategic leadership.</h3>
+          <p>For teams that need practical security programs, assurance, and decision support.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/cybersecurity">View cybersecurity</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up delay-100">
+          <span class="mono">IT security</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Framework implementation, internal audits, continuity, and cloud governance.</h3>
+          <p>For organizations that need standards translated into working controls and audit-ready evidence.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/it-security">View IT security</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up delay-200">
+          <span class="mono">Endpoint operations</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Visibility, automation, monitoring, and lifecycle control.</h3>
+          <p>For IT teams balancing device growth, compliance, operational resilience, and automation expectations.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/endpoint-management">View endpoint operations</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up">
+          <span class="mono">Core industry services</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Management systems, sector audits, and industrial assurance.</h3>
+          <p>For operations, quality, and supplier teams dealing with regulated industrial environments.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/core-industry">View core industry</a>
+        </GlassCard>
+
+        <GlassCard className="fade-up delay-100">
+          <span class="mono">Training</span>
+          <h3 class="mb-1 mt-1" style="font-size: 1.25rem;">Capability building for security, privacy, governance, and recovery teams.</h3>
+          <p>For organizations that need internal awareness and audit readiness to sustain change after rollout.</p>
+          <a class="btn btn-outline w-full mt-2" href="/services/training">View training</a>
+        </GlassCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Grid -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <SectionHeader 
+        eyebrow="Industry coverage"
+        headline="Designed for environments with sector mandates, supplier pressure, and uptime risk."
+        lede="The operating contexts where Cyberfyx brings the most confidence and control."
+        centered={true}
+      />
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <GlassCard className="fade-up border-l-4" style="border-left: 4px solid var(--accent-primary);">
+          <span class="mono">Regulated digital businesses</span>
+          <h4 class="mt-1 mb-1">Healthcare, BFSI, SaaS, and privacy-sensitive platforms.</h4>
+          <p>Programs built for regulated data handling, customer assurance, audit obligations, and changing privacy expectations.</p>
+        </GlassCard>
+        <GlassCard className="fade-up delay-100 border-l-4" style="border-left: 4px solid var(--accent-primary);">
+          <span class="mono">Industrial operations</span>
+          <h4 class="mt-1 mb-1">Manufacturing, aerospace, automotive, energy, and OT-heavy operations.</h4>
+          <p>Support for safety, continuity, supplier audits, and industrial transformation programs.</p>
+        </GlassCard>
+      </div>
+      <div class="text-center mt-3 fade-up delay-200">
+         <a href="/industries" class="btn btn-outline">Explore All Supported Industries</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery steps -->
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader 
+        eyebrow="Delivery model"
+        headline="A clearer engagement path from assessment to operating rhythm."
+      />
+      <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="surface fade-up">
+           <span class="mono">01 Diagnose</span>
+           <h4 class="mt-1 mb-1">Assess the current state</h4>
+           <p style="font-size: 0.95rem;">Map frameworks, tooling, risks, and operational dependencies across the environment.</p>
+        </div>
+        <div class="surface fade-up delay-100">
+           <span class="mono">02 Prioritize</span>
+           <h4 class="mt-1 mb-1">Shape the control roadmap</h4>
+           <p style="font-size: 0.95rem;">Translate findings into phased remediation, governance workstreams, and delivery checkpoints.</p>
+        </div>
+        <div class="surface fade-up delay-200">
+           <span class="mono">03 Implement</span>
+           <h4 class="mt-1 mb-1">Operationalize the program</h4>
+           <p style="font-size: 0.95rem;">Deploy controls, documentation, training, endpoint tooling, and audit-ready evidence.</p>
+        </div>
+        <div class="surface fade-up delay-300">
+           <span class="mono">04 Sustain</span>
+           <h4 class="mt-1 mb-1">Maintain readiness over time</h4>
+           <p style="font-size: 0.95rem;">Support reviews, internal audits, monitoring, and continuous improvement as environments evolve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FooterCta />
+</BaseLayout>
+
+<script>
+  import '../scripts/animations.ts';
+  import '../scripts/hero-grid.ts';
+</script>

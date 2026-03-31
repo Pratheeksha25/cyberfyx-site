@@ -64,8 +64,14 @@ echo "[backend] Starting uvicorn on :8000..."
 BACKEND_PID=$!
 
 # --- Frontend setup ---
-echo "[frontend] Installing npm packages..."
 cd "$FRONTEND_DIR"
+
+if [ ! -f ".env" ]; then
+  echo "[frontend] No .env found — copying .env.example"
+  cp .env.example .env
+fi
+
+echo "[frontend] Installing npm packages..."
 npm install --silent
 
 echo "[frontend] Starting Astro dev server on :4321..."

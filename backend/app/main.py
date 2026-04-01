@@ -4,14 +4,29 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
+from slowapi import _rate_limit_exceeded_handler
 
 from app.api.router import api_router
 from app.core.config import get_settings
 from app.core.database import check_database_ready
 from app.core.errors import AppError, register_error_handlers
+from app.core.rate_limit import limiter
 from app.services.site import resolve_frontend_root
 
 settings = get_settings()
+CSP_POLICY = (
+    "default-src 'self'; "
+    "script-src 'self'; "
+    "style-src 'self' 'unsafe-inline'; "
+    "img-src 'self' data: https:; "
+    "font-src 'self' data:; "
+    "connect-src 'self'; "
+    "frame-ancestors 'none'; "
+    "base-uri 'self'; "
+    "form-action 'self'"
+)
 
 
 def _register_frontend(app: FastAPI) -> None:
@@ -55,6 +70,9 @@ def create_app() -> FastAPI:
         expose_headers=["X-Request-ID"],
         max_age=600,
     )
+    app.state.limiter = limiter
+    app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+    app.add_middleware(SlowAPIMiddleware)
 
     @app.middleware("http")
     async def add_request_context(request: Request, call_next):
